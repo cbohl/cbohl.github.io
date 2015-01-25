@@ -19,3 +19,8 @@ h4 {
   font-style:italic;
 }
 
+#box {
+  border: solid green;
+  display:block;
+}
+

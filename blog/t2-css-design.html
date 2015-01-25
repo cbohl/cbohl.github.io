@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<head>
+  <title>CSS Design</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+
+<main>
+  <img src="http://placehold.it/350x150">
+  <br>
+
+  <h1>CSS Design</h1>
+  <br>
+  <h2>Inline, block, and inline-block</h2>
+  <img class = "side-image" src="http://placehold.it/350x150">
+  <br>
+  <h4>January 24, 2015</h4>
+
+  <section>
+        <div>
+
+
+
+    <p>
+      In order to be able to create a visually appealing web page, one must understand the tools used to move objects around the webpage. This post will look at different ways to display objects on a webpage using CSS (Cascading Style Sheets). CSS is a language used to format HTML (HyperText Markup Language), which is the language through which all websites are interpreted. Specifically, this post will examine the display method and its features, inline, block, and inline-block.
+    </p>
+    <p>
+      Let’s say we have an object with some text inside, like this:
+    </p>
+
+    <code>
+  span{
+    background:red;
+    height:50px;
+    width:50px;
+  }
+    </code>
+  <img ID= "box" src = "../imgs/object.png">
+
+  <h2>Inline</h2>
+  <p>
+    Now, let's add some text around it and set the display as inline (the default display).
+  </p>
+
+  <code>
+    span{
+      background:red;
+      height:50px;
+      width:50px;
+      display: inline;
+    }
+  </code>
+
+  <img ID= "box" src = "../imgs/inline.png">
+
+  <p>
+    Notice how the text is now "inline", but also how the margins of the objects have been changed to fit within the surrounding text.
+  </p>
+
+  <h2>Block</h2>
+  <p>
+    Next, let's look at the block attribute.
+  </p>
+
+  <code>
+    span{
+      background:red;
+      height:50px;
+      width:50px;
+      display: block;
+    }
+  </code>
+
+  <img ID= "box" src = "../imgs/block.png">
+
+  <p>
+    First, notice how the margins of the object have not been effected at all. Second, notice that the object was moved down below.
+  </p>
+
+  <h2>Inline-block</h2>
+  <p>Great! Finally, let's look at inline-block.</p>
+  <code>
+    span{
+      background:red;
+      height:50px;
+      width:50px;
+      display: inline-block;
+    }
+  </code>
+  <img ID= "box" src = "../imgs/inline-block.png">
+
+  <p>Cool! You should notice that inline-block combines attributes of both inline and block. Like inline, the object remains within the text--it does not start a new line. Like block, however, it sustains the border of the object and does not start a new line.
+  </p>
+
+
+
+
+
+
+
+
+
+  </section>
+
+  <a href = "#">Last Post</a>
+  <a href = "#">Next Post</a>
+</main>
+
