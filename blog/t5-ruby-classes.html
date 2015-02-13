@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+  <title>Ruby Classes</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+
+<main>
+  <h1>Ruby Classes</h1>
+  <br>
+  <h2>How to Build Your Virtual Car</h2>
+  <br>
+  <h4>February 13, 2015</h4>
+
+  <section>
+    <p>Have you ever wondered why a string or an integer has certain properties and methods that can be called on them? Who built them that way? As it turns out, objects in Ruby belong to classes, which define certain attributes that an object must have and which methods can be called on them. String and integer are examples of public classes, meaning that they can be used in any Ruby code. They were built by the creators of Ruby.</p>
+
+    <p>But an everyday user can create classes, too! It's just that these classes can only be used within that specific program. Imagine we want to create a class, car, that can rev the engine, drive, and use gasoline at a certain rate of miles per gallon.</p>
+
+    <h6 class = input_line>Input:</h6>
+    <pre class = input_codeblock><code>
+class Car <span class = comment>#A new class</span>
+  def initialize(mpg) <span class = comment>#A method within a class</span>
+    @gas = 15.0 <span class = comment>#An instance variable</span>
+    @mpg = mpg
+  end
+
+  def rev
+    if @gas > 0.1
+      puts "Vrooooom!"
+    else
+      puts "Sputter, sputter, sputter..."
+    end
+  end
+
+  def drive(miles)
+    gas_required = (1.0/@mpg) * miles
+
+    if @gas - gas_required > 0
+      puts "You just drove #{miles} miles, what a fun trip!"
+      @gas -= gas_required
+    else
+      miles_driven = @mpg * @gas
+      @gas = 0
+      puts "You were #{miles_driven} miles into your trip when
+      your engine stopped running. Uh oh!"
+    end
+  end
+
+  def check_gas
+    puts "You have #{@gas} gallons of gas left."
+  end
+end
+    </code></pre>
+
+    <p>Great! Now we have created the new class, Car. Probably the most important thing to notice in this example are the instance variables, which are created using the '@' symbol. Instance variables always work within an entire individual class. Now, let's try using our new class.
+    </p>
+
+    <h6 class = input_line>Input:</h6>
+    <code> <pre class = input_codeblock>
+camry = Car.new(30) <span class = comment>#Creating a new object, camry, of the class, Car</span>
+camry.check_gas
+camry.drive(60)
+camry.check_gas
+    </code></pre>
+
+    <h6 class = output_line>Output:</h6>
+    <code> <pre class = output_codeblock>
+You have 15.0 gallons of gas left.
+You just drove 60 miles, what a fun trip!
+You have 13.0 gallons of gas left.
+    </code></pre>
+
+    <p>Notice how the method check_gas uses the variable @gas, even though it is an entirely different method. If we had not included the '@' sign, @gas would not have been accessible in the initalize method.</p>
+
+    <p>Starting to understand why you might create a class of your own? Now, let's have some more fun with the class we created!
+
+          <h6 class = input_line>Input:</h6>
+    <code> <pre class = input_codeblock>
+camry.rev
+camry.drive(500)
+camry.check_gas
+camry.rev
+    </code></pre>
+
+    <h6 class = output_line>Output:</h6>
+    <code> <pre class = output_codeblock>
+Vrooooom!
+You were 390.0 miles into your trip when your engine stopped running.
+Uh oh!
+You have 0 gallons of gas left.
+Sputter, sputter, sputter...
+    </code></pre>
+  </section>
+</main>

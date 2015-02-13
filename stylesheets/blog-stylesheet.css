@@ -42,7 +42,7 @@ h4 {
 color:white;
 background: black;
 border: solid red;
-width:500px;
+width:550px;
 font-family: Consolas, Monaco, "Lucida Console";
 font-size: 13px;
 }
@@ -57,11 +57,15 @@ font-size: 13px;
 color:#00FF00;
 background: black;
 border: solid yellow;
-width:500px;
+width:550px;
 display:block;
 font-family: Consolas, Monaco, "Lucida Console";
 font-size: 13px;
 margin-bottom: 30px
+}
+
+.comment{
+  color:yellow;
 }
 
 
