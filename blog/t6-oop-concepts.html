@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<head>
+  <title>Variable Scope in Ruby</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+
+<main>
+  <h1>Variable Scope in Ruby</h1>
+  <br>
+  <h2>Learn to control your variables!</h2>
+  <br>
+  <h4>February 22, 2015</h4>
+
+  <section>
+    <p>Variable scope refers to the ability of a variable to keep the same value in different parts of a program. Variables have different scopes so that they can either retain the same values throughout parts of a program or be reused.</p>
+
+    <p>In Ruby, the scope of variables is determined by the variable names:</p>
+
+    <pre>
+variable type       begins with     example
+
+local variable      [a-z]           word
+
+instance variable   [@]             @word
+
+class variable      [@@]            @@word
+
+global variable     [$]             $word
+
+constant            [A-Z]           WORD</pre>
+
+    <p>To begin, a local variable has a very small scope. It will work inside a method, but not outside.</p>
+
+
+    <h6 class = input_line>Input:</h6>
+    <pre class = input_codeblock><code>
+def method
+  x = 6
+  puts x
+end
+
+method
+puts x
+    </code></pre>
+
+    <h6 class = output_line>Output:</h6>
+    <code> <pre class = output_codeblock>
+6
+classes.rb:7:in `<main>': undefined local variable or method `x' for main:Object (NameError)
+    </code></pre>
+
+    <p>Notice how within method, the variable is printed. Once outside, however, an error occurs, because the variable x is undefined.</p>
+
+    <p>An instance variable is similar, only it will work within an entire instance of a class. For example:</p>
+
+
+    <h6 class = input_line>Input:</h6>
+    <pre class = input_codeblock><code>
+class X_user
+  def set_x
+    @x = 6
+  end
+
+  def print_x
+    puts @x
+  end
+end
+
+thing = X_user.new
+thing.set_x
+thing.print_x
+
+thing2 = X_user.new
+thing2.print_x
+
+puts @x
+    </code></pre>
+
+    <h6 class = output_line>Output:</h6>
+    <code> <pre class = output_codeblock>
+6
+(blank space here)
+(blank space here)
+    </code></pre>
+
+    <p>Here, the variable works within different methods in the same class. It does not, however, work in a different instance of the same class or outside outside of the class.</p>
+
+    <p>Class variables have even greater scope than instance variables. They work not only within one class, but also within any instances of a class. If, in the previous example, we replace the instance variable with a class variable:</p>
+
+
+    <h6 class = input_line>Input:</h6>
+    <pre class = input_codeblock><code>
+class X_user
+  def set_x
+    @@x = 6
+  end
+
+  def print_x
+    puts @@x
+  end
+end
+
+thing = X_user.new
+thing.set_x
+thing.print_x
+
+thing2 = X_user.new
+thing2.print_x
+
+puts @@x
+    </code></pre>
+
+    <h6 class = output_line>Output:</h6>
+    <code><pre class = output_codeblock>
+6
+6
+classes.rb:18: warning: class variable access from toplevel
+classes.rb:18:in `<main>': uninitialized class variable @@x in Object (NameError)
+    </code></pre>
+
+    <p>Notice how this time, '6' is printed out twice. Thing2 is a new instance of the X_user class, but it keeps the retains the value of @@x because @@x is a class variable.</p>
+
+    <p>Global variables apply throughout a program. They are designated using the $ and can be changed or used anywhere and everywhere. Constants are just like global variables, except they are typically used in different situations. For example, one might set PI = 3.142.</p>
+    <p>Variable scope is extremely important to understand for clean and clear programming. For example, it may be tempting to use a global variable in place of a class variable because they will have the same results in a given program. That said, showing that a variable is a class may remind you in the future what your intentions were for the variable. It takes time and practice to really get an understanding of when to use different types of variables.</p>
+  </section>
+</main>
