@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+  <title>Ruby Classes and JavaScript Functions</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheet.css">
+</head>
+
+<main>
+  <h1>Ruby Classes and JavaScript Functions</h1>
+  <br>
+  <h2>Learn how to do the same thing... in two different languages!</h2>
+  <br>
+  <h4>March 1, 2015</h4>
+
+  <section>
+    <p>In programming, it is often useful to build a model that can be used for multiple instances. For example, one might want to create multiples dogs, each which has its own name, age, and tricks it can do. Both Ruby and JavaScript allow the programmer to do this.</p>
+
+    <p>Let's start with Ruby. We will define a class, dog.</p>
+
+    <h6 class = input_line>Input:</h6>
+    <pre class = input_codeblock><code>
+class Dog
+  attr_reader :name, :age, :tricks
+
+  def initialize(name, age, tricks)
+    @name = name
+    @age = age
+    @tricks = tricks
+  end
+end
+    </code></pre>
+
+    <p>Great. Now let's create an instance of the dog class named Skipper, and print out its contents.</p>
+
+    <h6 class = input_line>Input:</h6>
+    <pre class = input_codeblock><code>
+skipper = Dog.new("Skipper", 10, ["shake", "sit"])
+
+puts skipper.name
+puts skipper.age
+puts skipper.tricks
+    </code></pre>
+
+    <h6 class = output_line>Output:</h6>
+    <code> <pre class = output_codeblock>
+Skipper
+10
+shake
+sit
+    </code></pre>
+
+    <p>Success! @name, @age, and @tricks are all instance variables, and therefore are typically inaccessible outside of the class. In this case, however, we use the attr_reader when we create the class so that we can access them.</p>
+
+    <p>Now, let's do the same thing in JavaScript.</p>
+
+    <h6 class = input_line>Input:</h6>
+    <pre class = input_codeblock><code>
+function dog(name, age, tricks) {
+  this.name = name;
+  this.age = age;
+  this.tricks = tricks
+}
+    </code></pre>
+
+    <p>Notice how JavaScript calls this a function, rather than a class. In this situation, however, it will serve the same purpose.</p>
+
+    <p>Now, let's create an instance, kit, and print out its contents.</p>
+
+    <h6 class = input_line>Input:</h6>
+    <pre class = input_codeblock><code>
+var kit = new dog("Kit", 4, ["roll-over", "heel"]);
+
+console.log(kit.name)
+console.log(kit.age)
+console.log(kit.tricks)
+    </code></pre>
+
+    <h6 class = output_line>Output:</h6>
+    <code> <pre class = output_codeblock>
+Kit
+4
+[ 'roll-over', 'heel' ]
+    </code></pre>
+
+    <p>Cool. Just like with the Ruby, we have created a new instance and printed its results. Notice how, like with Ruby, we had to make the variables accessible to all. Instead of using attr_reader though, we created separate methods in the fuction by using this.method.</p>
+
+    <p>And that is how you can create a model in two languages important to web developers: Ruby and JavaScript.</p>
+  </section>
+</main>
+
