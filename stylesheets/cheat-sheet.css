@@ -1,0 +1,83 @@
+html {
+	background-color: #27505E
+}
+
+img#logo {
+	width: 200px;
+	height: 250px;
+}
+
+/* unvisited link */
+a:link {
+    color: #FFFFFF;
+}
+
+/* visited link */
+a:visited {
+    color: #FF30FF; 
+}
+
+/* mouse over link 
+a:hover {
+    color: #FF00FF; */
+}
+
+/* selected link */
+a:active {
+    color: #27505E;
+	background-color: #FFFFFF
+}
+
+
+/*  in-line-block 
+use this to address the issues with the drop down menu buttons
+the main buttons on the index page
+the triange box problem on the index page
+
+ul#display-inline-block-example,
+03.ul#display-inline-block-example li {
+04./ Setting a common base /
+05.margin: 0;
+06.padding: 0;
+07.}
+08. 
+09.ul#display-inline-block-example li {
+10.display: inline-block;
+11.width: 100px;
+12.min-height: 100px;
+13.background: #ccc;
+14.vertical-align: top;
+15.}
+
+*/
+
+
+.input_line{
+  margin-top:-3px;
+  margin-bottom:-3px;
+  color:red;
+}
+
+.input_codeblock{
+color:white;
+display:inline-block;
+position:fixed;
+background: black;
+border: solid red;
+width:310px;
+font-family: Consolas, Monaco, "Lucida Console";
+font-size: 13px;
+}
+
+.descriptor_codeblock{
+display:inline-block;
+position:fixed;
+margin-left: 330px;
+color:black;
+background: white;
+/*border: solid red;*/
+width:330px;
+font-family: Consolas, Monaco, "Lucida Console";
+font-size: 13px;
+}
+

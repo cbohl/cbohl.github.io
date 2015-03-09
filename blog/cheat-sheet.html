@@ -1,0 +1,147 @@
+<! DOCTYPE html>
+<html>
+<head>
+ <link type="text/css" rel="stylesheet" href="./cheat-sheet.css">
+</head>
+<header>
+	<div id="title"> 
+		<h1>JavaScript Objects Cheat Sheet</h1>
+		<h3>
+			<script type="text/javascript">
+			<!--
+			var currentTime = new Date()
+			var month = currentTime.getMonth() + 1
+			var day = currentTime.getDate()
+			var year = currentTime.getFullYear()
+			document.write(month + "/" + day + "/" + year)
+			//-->
+			</script>
+</h3>
+		<div id="logo_wrapper" style="width:100%; text-align:right"></div>
+
+	</div>
+	
+	<hr>
+</header>
+
+ <body>
+ 
+
+<div id="example_wrapper_left" style="width:30%; float:right">
+
+	
+  <h4 class = input_line>Sequential Execution</h4>
+  <pre class = input_codeblock><code>
+
+var terah = {
+  name: "Terah",
+  age: 32,
+  height: 66,
+  weight: 130,
+  hairColor: "brown",
+  eyeColor: "brown"
+}
+
+var adam = {}
+adam.name = "Adam"
+adam.spouse = terah
+
+terah.spouse = adam
+terah.weight = 125
+delete terah.eyeColor
+
+var terah.children = {}
+
+terah.children.carson = {}
+terah.children.carson.name = "Carson"
+
+terah.children.carter = {}
+terah.children.carter.name = "Carter"
+
+terah.children.colton = {}
+terah.children.colton.name = "Colton"
+
+adam.children = terah.children
+  </code></pre>
+</div>
+
+<pre class = descriptor_codeblock><code>
+Establishing the Terah-object with 
+various properties.
+
+
+
+
+
+
+
+
+Establishing the Adam-object.
+
+
+
+
+Manipulating the Terah-object.
+
+
+
+
+
+Creating the children property and setting
+the value as the children and their name.
+
+
+
+
+Assigning the Children-object to Adam.
+</code></pre>
+
+
+<div id="example_wrapper_right" >
+
+   <h4 class = input_line>Simultaneous Execution</h4>
+  <pre class = input_codeblock><code>
+var terah = {
+  name: "Terah",
+  age: 32,
+  height: 66,
+  weight: 130,
+  hairColor: "brown",
+  eyeColor: "brown"
+}
+
+var adam = {
+  name: "Adam",
+  spouse: terah,
+}
+
+terah.spouse = adam;
+terah.weight = 125;
+delete terah.eyeColor;
+
+
+
+
+terah.children = {
+  carson: {name: "Carson"},
+  carter: {name: "Carter"},
+  colton: {name: "Colton"},
+}
+adam.children = terah.children;
+  </code></pre>
+  </div>
+ 		
+	</body>
+
+</html>
+
+
+
+
+/////////
+
+<div id="title_buttons">
+		<a href="../index.html">Index</a>
+		<a href="../blog/index_blog.html">Proposals</a>
+		<a href="../contacts/index_contacts.html">Good People</a>
+	</div>
