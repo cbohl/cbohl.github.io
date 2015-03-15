@@ -1,0 +1,115 @@
+html{
+  background-color: black;
+}
+
+body{
+  background-image: url(../imgs/mac_background2.png);
+}
+
+#background{
+  position: relative;
+  top:100px;
+  left:100px;
+  color:yellow;
+  background-color: yellow;
+}
+
+h1{
+  position:absolute;
+  color:white;
+  text-align: left;
+  font-size: 80px;
+  top:0px;
+
+}
+
+h2{
+  text-decoration: underline;
+}
+
+p{
+  color:red;
+  font-size:30px;
+}
+
+div1{
+  position: relative;
+  float: left;
+  width:400px;
+
+}
+
+div2{
+  position: relative;
+  float: left;
+  width: 400px;
+  left: 60px;
+}
+
+div3{
+  position: absolute;
+  float: left;
+  bottom: 0%;
+  width: 100px;
+  margin-bottom: 2%;
+top: 1000px;
+}
+
+#portrait{
+  position: absolute;
+  left: 700px;
+}
+
+#twitter_logo{
+  position: absolute;
+  left: 50px;
+  top: 140px;
+}
+
+#twitter_link{
+  position: absolute;
+  left: 100px;
+  top:140px;
+}
+
+#linkedin_logo{
+  position: absolute;
+  left: 40px;
+  top: 200px;
+}
+
+#linkedin_link{
+  position: absolute;
+  left: 90px;
+  top:210px;
+}
+
+#github_logo{
+  position: absolute;
+  left: 49px;
+  top: 280px;
+}
+
+#github_link{
+  position: absolute;
+  left: 90px;
+  top:350px;
+}
+
+#blog_logo{
+  position: absolute;
+  left: 51px;
+  top: 350px;
+}
+
+#blog_link{
+  position: absolute;
+  left: 90px;
+  top:280px;
+}
+
+
+.website_link{
+  color: red;
+  font-size: 30px;
+}
